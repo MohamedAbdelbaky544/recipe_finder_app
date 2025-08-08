@@ -24,21 +24,19 @@ class ProductDetailPage extends ConsumerWidget {
         centerTitle: true,
       ),
       body: viewModel.mealData == null && viewModel.error == null
-          ? Expanded(child: Center(child: CircularProgressIndicator()))
+          ? Center(child: CircularProgressIndicator())
           : viewModel.error != null
-          ? Expanded(
-              child: Center(
-                child: Column(
-                  children: [
-                    Text(viewModel.error ?? 'Error'),
-                    ElevatedButton(
-                      onPressed: () {
-                        viewModel.getData(id: id);
-                      },
-                      child: Text('retry'),
-                    ),
-                  ],
-                ),
+          ? Center(
+              child: Column(
+                children: [
+                  Text(viewModel.error ?? 'Error'),
+                  ElevatedButton(
+                    onPressed: () {
+                      viewModel.getData(id: id);
+                    },
+                    child: Text('retry'),
+                  ),
+                ],
               ),
             )
           : SingleChildScrollView(

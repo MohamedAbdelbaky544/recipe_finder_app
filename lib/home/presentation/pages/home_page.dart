@@ -34,20 +34,16 @@ class HomePage extends ConsumerWidget {
             viewModel.mealData.isEmpty && viewModel.error == null
                 ? Expanded(child: Center(child: CircularProgressIndicator()))
                 : viewModel.error != null
-                ? Expanded(
-                    child: Center(
-                      child: Column(
-                        children: [
-                          Text(viewModel.error ?? 'Error'),
-                          ElevatedButton(
-                            onPressed: () {
-                              viewModel.getData(search: 'a');
-                            },
-                            child: Text('retry'),
-                          ),
-                        ],
+                ? Column(
+                    children: [
+                      Center(child: Text(viewModel.error ?? 'Error')),
+                      ElevatedButton(
+                        onPressed: () {
+                          viewModel.getData(search: 'a');
+                        },
+                        child: Text('retry'),
                       ),
-                    ),
+                    ],
                   )
                 : Expanded(
                     child: ListView.builder(
