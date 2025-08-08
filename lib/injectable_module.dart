@@ -32,7 +32,12 @@ abstract class InjectableModule {
     dio.interceptors.add(
       InterceptorsWrapper(
         onError: (error, handler) async {
-          if (error.response?.statusCode == 401) {}
+          // if (error.response?.statusCode == 401) {}
+          print('-------------------------');
+          print(error.error);
+          print(error.message);
+          print('-------------------------');
+
           return handler.next(error);
         },
         onRequest: (request, handler) async {

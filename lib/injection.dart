@@ -5,6 +5,6 @@ import 'package:recipe_finder_app/injection.config.dart';
 final GetIt getIt = GetIt.instance;
 
 @injectableInit
-Future<void> configureInjection(String env) async {
-  await GetItInjectableX(getIt).init(environment: env);
+Future<void> configureInjection() async {
+  await GetItInjectableX(getIt).init();
 }

@@ -1,4 +1,6 @@
-
-
-
-{}
+{
+  "searchRecipes": "Search recipes",
+  "result": "result",
+  "recipe": "Recipe",
+  "ingredients": "Ingredients"
+}
